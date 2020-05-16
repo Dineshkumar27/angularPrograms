@@ -1,10 +1,11 @@
 import {Component} from "@angular/core";
 @Component({
   selector: 'courses',
-  template: `<h1 [textContent]="title"></h1>`
+  template: `<button  class="btn btn-primary" [class.active]="isClicked"> Save</button>`
 
 })
 export class CoursesComponent{
-  title="Welcome"
+  title = "Welcome";
+  isClicked=true;
 
 }
