@@ -3,25 +3,24 @@ import { log } from 'util';
 @Component({
   selector: 'courses',
   template: `
-  <input [(ngModel)]="email" (keyup.enter)="onKeyup()">`
+  {{course.title|uppercase}}<br>
+  {{course.students|number}}<br>
+  {{course.rating|number:'1.2-2'}}<br>
+  {{course.price|currency:'INR'}}<br>
+{{course.date()|date:'shortDate'}}<br>
+
+  `
 //you have to import the FormsComponent in the app.module.ts
 
 })
 export class CoursesComponent{
-  email="mailfordins@gmail.com"
-  title = "Welcome";
-  isClicked=true;
-  onClicked($event) {
-    $event.stopPropagation();
-    console.log("Button Clicked",$event);
-  }
-  onDivClicked(){
+course={
+  title:"Python Programming",
+  rating:4.989445,
+  students:97434334,
+  price:195.89,
+  date: Date
 
-    console.log("Div Clicked");
-  }
-  onKeyup(){
-  console.log(this.email);
-
-  }
+}
 
 }
