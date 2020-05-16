@@ -1,9 +1,10 @@
 import {Component} from "@angular/core";
 @Component({
-  selector:'courses',
-  template: '<h1>Dinesh</h1>'
+  selector: 'courses',
+  template: `<h1 [textContent]="title"></h1>`
 
 })
 export class CoursesComponent{
+  title="Welcome"
 
 }
