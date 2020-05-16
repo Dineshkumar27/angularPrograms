@@ -3,8 +3,8 @@ import { log } from 'util';
 @Component({
   selector: 'courses',
   template: `
-  <input [value]="email" (keyup.enter)="email=$event.target.value;onKeyup(email)">`
-//two way binding
+  <input [(ngModel)]="email" (keyup.enter)="onKeyup()">`
+//you have to import the FormsComponent in the app.module.ts
 
 })
 export class CoursesComponent{
@@ -19,8 +19,8 @@ export class CoursesComponent{
 
     console.log("Div Clicked");
   }
-  onKeyup(myWebsite){
-  console.log(myWebsite);
+  onKeyup(){
+  console.log(this.email);
 
   }
 
