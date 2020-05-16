@@ -1,10 +1,10 @@
 import {Component} from "@angular/core";
+import { log } from 'util';
 @Component({
   selector: 'courses',
   template: `
-  <div (click)="onDivClicked()">
-    <button  (click)="onClicked($event)"> Save</button>
-    </div>`
+  <input #website (keyup.enter)="onKeyup(website.value)">`
+  // website is template variable
 
 })
 export class CoursesComponent{
@@ -17,6 +17,10 @@ export class CoursesComponent{
   onDivClicked(){
 
     console.log("Div Clicked");
+  }
+  onKeyup(myWebsite){
+  console.log(myWebsite);
+
   }
 
 }
