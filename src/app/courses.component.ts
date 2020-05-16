@@ -3,11 +3,12 @@ import { log } from 'util';
 @Component({
   selector: 'courses',
   template: `
-  <input #website (keyup.enter)="onKeyup(website.value)">`
-  // website is template variable
+  <input [value]="email" (keyup.enter)="email=$event.target.value;onKeyup(email)">`
+//two way binding
 
 })
 export class CoursesComponent{
+  email="mailfordins@gmail.com"
   title = "Welcome";
   isClicked=true;
   onClicked($event) {
